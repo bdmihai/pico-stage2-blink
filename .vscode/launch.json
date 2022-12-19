@@ -1,0 +1,64 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/bin/application.elf",
+            "name": "OpenOCD Core0",
+            "request": "launch",
+            "device": "RP2040",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "serverpath": "${workspaceFolder}/tools/openocd/bin/openocd",
+            "svdFile": "${workspaceFolder}/doc/svd/rp2040.svd",
+            "breakAfterReset": true,
+            "searchDir": [
+                "${workspaceFolder}/tools/openocd/tcl"
+            ],
+            "configFiles": [
+                "interface/wch-link.cfg",
+                "target/rp2040-core0.cfg"
+            ],
+            "swoConfig":{
+                "enabled":true,
+                "source":"probe",
+                "swoFrequency": 2000000,
+                "cpuFrequency":96000000,
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "Output",
+                        "encoding":"ascii"
+                    }
+                ]
+            }
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/bin/application.elf",
+            "name": "OpenOCD + RTOS",
+            "request": "launch",
+            "device": "RP2040",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "rtos": "FreeRTOS",
+            "svdFile": "${workspaceFolder}/doc/svd/RP2040.svd",
+            "searchDir": [
+                "${env:HOME}//work/tools/openocd/tcl"
+            ],
+            "configFiles": [
+                "interface/stlink.cfg",
+                "board/stm32f411xx.cfg"
+            ],
+            "openOCDLaunchCommands": [
+                "stm32f4x.cpu configure -rtos FreeRTOS"
+            ],
+            "overrideLaunchCommands": [
+            ]
+        }
+    ]
+}

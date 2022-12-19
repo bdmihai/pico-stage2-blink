@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "./source/app/**",
+                "/usr/lib/gcc/arm-none-eabi/12.2.0/include/**",
+                "/usr/lib/gcc/arm-none-eabi/12.2.0/include-fixed/**",
+                "/usr/lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/include/**"
+            ],
+            "forcedInclude": [],
+            "compilerPath": "/usr/bin/arm-none-eabi-g++",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "defines": [
+            ]
+        }
+    ],
+    "version": 4
+}
