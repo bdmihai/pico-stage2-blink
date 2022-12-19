@@ -1,0 +1,9 @@
+[submodule "doc"]
+	path = doc
+	url = git@github.com:bdmihai/pico-doc
+[submodule "qbs/modules/pico"]
+	path = qbs/modules/pico
+	url = git@github.com:bdmihai/pico-qbs
+[submodule "tools"]
+	path = tools
+	url = git@github.com:bdmihai/pico-tools
